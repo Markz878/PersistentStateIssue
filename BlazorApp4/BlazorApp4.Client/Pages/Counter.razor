@@ -1,0 +1,19 @@
+﻿@page "/counter"
+@rendermode InteractiveWebAssembly
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+@if (State is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>Current count: @State.Count</p>
+}
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
