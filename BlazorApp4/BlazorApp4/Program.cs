@@ -32,6 +32,9 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(BlazorApp4.Client._Imports).Assembly);
 
-app.MapGet("api/counterstate", (ICounterService counterService) => counterService.GetCountAsync());
+app.MapGet("api/counterstate", (ICounterService counterService) =>
+{
+    return counterService.GetCountAsync();
+});
 
 app.Run();
